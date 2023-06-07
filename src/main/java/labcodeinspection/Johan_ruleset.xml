@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
 	<description>
-Code Inspection Lab, Johan Gilces Reyes
+Code Inspection Lab, Johan Gilces Reyes, Alan Barco, Danny Loor, Joseph Avila
 </description>
 	<rule ref="category/java/performance.xml" />
 	<rule ref="category/java/bestpractices.xml">
