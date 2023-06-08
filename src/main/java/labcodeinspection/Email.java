@@ -1,5 +1,7 @@
 package labcodeinspection;
 
+import java.util.Locale;
+
 public class Email {
 
 	private String m_firstName;
@@ -9,16 +11,26 @@ public class Email {
 	private int defaultpasswordLength = 8;
 	private String email;
 
+	/**
+	 * @param firstName
+	 * @param lastName
+	 */
 	public Email(String firstName, String lastName) {
 		this.m_firstName = firstName;
 		this.m_lastName = lastName;
 	}
 
+	/**
+	 * Show user info
+	 */
 	public void showInfo() {
 		System.out.println("\nFIRST NAME= " + m_firstName + "\nLAST NAME= " + m_lastName);
 		System.out.println("DEPARMENT= " + department + "\nEMAIL= " + email + "\nPASSWORD= " + password);
 	}
 
+	/**
+	 * @param depChoice Int 1-3 to select the department
+	 */
 	public void setDeparment(int depChoice) {
 		switch (depChoice) {
 		case 1:
@@ -43,9 +55,12 @@ public class Email {
 		return new String(password);
 	}
 
+	/**
+	 * Generate the email address from name and dept
+	 */
 	public void generateEmail() {
 		this.password = this.randomPassword(this.defaultpasswordLength);
-		this.email = this.m_firstName.toLowerCase() + this.m_lastName.toLowerCase() + "@" + this.department
+		this.email = this.m_firstName.toLowerCase(Locale.ENGLISH) + this.m_lastName.toLowerCase(Locale.ENGLISH) + "@" + this.department
 				+ ".espol.edu.ec";
 	}
 }
